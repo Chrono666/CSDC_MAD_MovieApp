@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="image_content_description">Woman sitting on chair behind table with a chessboard and chess pieces</string>
+    <string name="fab_content_description">Button click opens toast</string>
     <string name="movie_title">The Queen\'s Gambit</string>
     <string name="genre_tag_1">Drama,</string>
     <string name="genre_tag_2">Sport</string>
