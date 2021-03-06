@@ -1,5 +1,22 @@
 package com.example.movieapp
 
+import android.widget.RatingBar
+import android.widget.TextView
+import androidx.databinding.BindingAdapter
+
+@BindingAdapter("android:text")
+fun setText(view: TextView, list: List<String>) {
+    view.text = list.joinToString(", ")
+}
+
+@BindingAdapter("android:rating")
+fun setRating(ratingBar: RatingBar, float: Float) {
+    when (float) {
+        in (0.0f..5.0f) -> ratingBar.rating = float
+        else -> ratingBar.rating = 0.0f
+    }
+}
+
 data class Movie(
     var title: String = "The Queen's Gambit",
     var description: String = "The Queen\'s Gambit follows the life of an orphan chess prodigy," +
@@ -19,7 +36,7 @@ data class Movie(
             "and fellow player D.L. Townes. As Beth rises to the top of the chess world and reaps the financial benefits of her " +
             "success, her drug and alcohol dependency becomes worse.",
     var rating: Float = 0.0F,
-    var genres: String? = "",
-    var creators: String = "",
-    var actors: String = "",
+    var genres: List<String?>,
+    var creators: List<String> = emptyList(),
+    var actors: List<String> = emptyList(),
 )
