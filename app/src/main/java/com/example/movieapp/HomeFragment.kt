@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
         genres = listOf("Drama", "Sport"),
         creators = listOf("Scott Frank", "Alan Scott"),
         actors = listOf("Anya Taylor-Joy", "Chloe Pirrie"),
+        picture = R.drawable.gambit
     )
 
     override fun onCreateView(
@@ -42,6 +43,9 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+
+        binding.movie1 = movie1
+
         binding.seeDetailButton.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(

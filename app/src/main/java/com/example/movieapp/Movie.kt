@@ -19,10 +19,11 @@ fun setRating(ratingBar: RatingBar, float: Float) {
 }
 
 data class Movie(
-    var title: String,
-    var description: String,
-    var rating: Float,
-    var genres: List<String?>,
-    var creators: List<String>,
-    var actors: List<String>,
+    val title: String,
+    val description: String,
+    val rating: Float,
+    val genres: List<String?>,
+    val creators: List<String>,
+    val actors: List<String>,
+    val picture: Int
 ): Serializable

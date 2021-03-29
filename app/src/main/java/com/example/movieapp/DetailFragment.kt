@@ -24,8 +24,11 @@ class DetailFragment : Fragment() {
             args.movie.rating,
             args.movie.genres,
             args.movie.creators,
-            args.movie.actors
+            args.movie.actors,
+            args.movie.picture
         )
+
+        binding.titleImage.setImageResource(args.movie.picture)
         return binding.root
     }
 

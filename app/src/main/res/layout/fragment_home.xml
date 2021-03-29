@@ -27,7 +27,7 @@
             tools:text="@tools:sample/lorem" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/movie_1"
+            android:id="@+id/card_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_wide"
@@ -46,7 +46,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_wide"
                     android:layout_marginTop="@dimen/margin_wide"
-                    android:text="TextView"
+                    android:text="@{movie1.title}"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/card_creators"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_wide"
                     android:layout_marginTop="@dimen/margin_wide"
-                    android:text="TextView"
+                    android:text="@{movie1.creators}"
                     app:layout_constraintBottom_toTopOf="@+id/card_actors"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/card_title"
@@ -71,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="@dimen/margin_small"
-                    android:text="TextView"
+                    android:text="@{movie1.actors}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/card_creators"
                     tools:text="@tools:sample/lorem" />
@@ -90,37 +92,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!--
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/movie_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movie_1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Button"
-                        tools:layout_editor_absoluteX="276dp"
-                        tools:layout_editor_absoluteY="0dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
-        -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
