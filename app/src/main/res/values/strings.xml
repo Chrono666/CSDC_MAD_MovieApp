@@ -15,4 +15,5 @@
     <string name="homeFragment_label">Home</string>
     <string name="detailFragment_label">Movie Details</string>
     <string name="watchlistFragment_label">Watchlist</string>
+    <string name="navigation_drawer_image">Navigation Drawer Image</string>
 </resources>
