@@ -17,7 +17,7 @@
         android:layout_marginTop="@dimen/margin_wide"
         android:layout_marginRight="@dimen/margin_small"
         android:layout_marginBottom="@dimen/margin_wide"
-        tools:context=".HomeFragment">
+        tools:context=".DetailFragment">
 
         <ImageView
             android:id="@+id/title_image"
@@ -27,8 +27,7 @@
             android:contentDescription="@string/image_content_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/gambit" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
             android:id="@+id/scroll_view"

@@ -9,14 +9,22 @@
         android:id="@+id/homeFragment"
         android:name="com.example.movieapp.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.movieapp.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.movieapp.Movie" />
+    </fragment>
     <fragment
         android:id="@+id/watchlistFragmen"
         android:name="com.example.movieapp.WatchlistFragmen"
         android:label="fragment_watchlist"
         tools:layout="@layout/fragment_watchlist" />
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.movieapp.DetailFragment"
-        android:label="DetailFragment" />
 </navigation>

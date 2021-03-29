@@ -10,6 +10,8 @@
     <!--    <string name="actor_tag">Anya Taylor-Joy, Chloe Pirrie</string>-->
     <string name="story_info_text">Story</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="see_detailButton">See Detail</string>
+    <string name="homeFragment_title">Welcome to the Movie App</string>
     <!--    <string name="story_text">-->
     <!--       The Queen\'s Gambit follows the life of an orphan chess prodigy,-->
     <!--        Elizabeth Harmon, during her quest to become the world\'s greatest-->
