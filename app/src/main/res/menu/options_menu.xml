@@ -3,6 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/watchlistFragmen"
+        android:id="@+id/watchlistFragment"
         android:title="@string/menu_option_2" />
 </menu>
