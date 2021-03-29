@@ -2,27 +2,13 @@
     <string name="app_name">MovieApp</string>
     <string name="image_content_description">Woman sitting on chair behind table with a chessboard and chess pieces</string>
     <string name="fab_content_description">Button click opens toast</string>
-    <!--    <string name="movie_title">The Queen\'s Gambit</string>-->
-    <!--    <string name="genre_tag">Drama, Sport</string>-->
     <string name="creators_info_text">Creators:</string>
-    <!--    <string name="creator_tag">Scott Frank, Alan Scott</string>-->
     <string name="actors_info_text">Actors:</string>
-    <!--    <string name="actor_tag">Anya Taylor-Joy, Chloe Pirrie</string>-->
     <string name="story_info_text">Story</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="see_detailButton">See Detail</string>
     <string name="homeFragment_title">Welcome to the Movie App</string>
-    <!--    <string name="story_text">-->
-    <!--       The Queen\'s Gambit follows the life of an orphan chess prodigy,-->
-    <!--        Elizabeth Harmon, during her quest to become the world\'s greatest-->
-    <!--        chess player while struggling with emotional problems and drug and-->
-    <!--        alcohol dependency. The title of the series refers to a chess opening-->
-    <!--        of the same name. The story begins in the mid-1950s and proceeds into the 1960s.-->
-    <!--        The story begins in Lexington, Kentucky, where a nine-year-old Beth, having lost her-->
-    <!--        mother in a car crash, is taken to an orphanage where she is taught chess by the-->
-    <!--        building\'s custodian, Mr. Shaibel. As was common during the 1950s, the orphanage-->
-    <!--        dispenses daily tranquilizer pills to the girls, which turns into an addiction-->
-    <!--        for Beth. She quickly becomes a strong chess player due to her visualization skills,-->
-    <!--        which are enhanced by the tranquilizers. A few years later, Beth is adopted by Alma Wheatley and her husband from Lexington. As she adjusts to her new home, Beth enters a chess tournament and wins despite having no prior experience in competitive chess. She develops friendships with several people, including former Kentucky State Champion Harry Beltik, United States National Champion Benny Watts, and journalist and fellow player D.L. Townes. As Beth rises to the top of the chess world and reaps the financial benefits of her success, her drug and alcohol dependency becomes worse.-->
-    <!--    </string>-->
+    <string name="menu_option_1">Home</string>
+    <string name="menu_option_2">Watch List</string>
+    <string name="watchlist_image">watchlist image</string>
 </resources>
