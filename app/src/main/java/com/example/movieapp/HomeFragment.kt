@@ -6,11 +6,16 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
 
+/*
     private val movie1: Movie = Movie(
         title = "The Queen's Gambit",
         description = "The Queen\'s Gambit follows the life of an orphan chess prodigy," +
@@ -35,6 +40,7 @@ class HomeFragment : Fragment() {
         actors = listOf("Anya Taylor-Joy", "Chloe Pirrie"),
         picture = R.drawable.gambit
     )
+*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +49,13 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
+        layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.layoutManager = layoutManager
+
+        adapter = RecyclerAdapter()
+        binding.recyclerView.adapter = adapter
+
+/*
         binding.movie1 = movie1
 
         binding.seeDetailButton.setOnClickListener { view: View ->
@@ -51,6 +64,7 @@ class HomeFragment : Fragment() {
                     HomeFragmentDirections.actionHomeFragmentToDetailFragment(movie1)
                 )
         }
+*/
 
         setHasOptionsMenu(true)
 
