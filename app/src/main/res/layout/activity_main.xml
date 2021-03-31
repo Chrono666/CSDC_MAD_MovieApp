@@ -3,175 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="movie"
-            type="com.example.movieapp.Movie" />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_wide"
-        android:layout_marginRight="@dimen/margin_small"
-        android:layout_marginBottom="@dimen/margin_wide"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/title_image"
-            android:layout_width="150dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:contentDescription="@string/image_content_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/gambit" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ScrollView
-            android:id="@+id/scroll_view"
-            android:layout_width="363dp"
-            android:layout_height="471dp"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_wide"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_image">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/scroll_view_constraint_layout"
+            <fragment
+                android:id="@+id/myNavHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/navigation" />
 
-                <TextView
-                    android:id="@+id/movie_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:fontFamily="@font/roboto"
-                    android:text="@{movie.title}"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@tools:sample/lorem" />
-
-                <TextView
-                    android:id="@+id/genre_tag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:text="@{movie.genres}"
-                    android:textColor="@color/important_text"
-                    app:layout_constraintEnd_toStartOf="@+id/ratingBar3"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_title"
-                    tools:text="@tools:sample/lorem" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar3"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:rating="@{movie.rating}"
-                    app:layout_constraintBottom_toBottomOf="@+id/genre_tag"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/genre_tag"
-                    app:layout_constraintTop_toTopOf="@+id/genre_tag" />
-
-                <TextView
-                    android:id="@+id/creators_info_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/creators_info_text"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/creator_tag"
-                    app:layout_constraintEnd_toStartOf="@+id/creator_tag"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/actor_info_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/actors_info_text"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/actor_tag_1"
-                    app:layout_constraintEnd_toStartOf="@+id/actor_tag_1"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/story_info_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/story_info_text"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/actor_tag_1" />
-
-                <TextView
-                    android:id="@+id/story_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@{movie.description}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/story_info_text"
-                    tools:text="@tools:sample/lorem/random" />
-
-                <TextView
-                    android:id="@+id/creator_tag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:text="@{movie.creators}"
-                    android:textColor="@color/important_text"
-                    app:layout_constraintStart_toEndOf="@+id/creators_info_text"
-                    app:layout_constraintTop_toBottomOf="@+id/genre_tag"
-                    tools:text="@tools:sample/lorem" />
-
-                <TextView
-                    android:id="@+id/actor_tag_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:text="@{movie.actors}"
-                    android:textColor="@color/important_text"
-                    app:layout_constraintStart_toEndOf="@+id/actor_info_text"
-                    app:layout_constraintTop_toBottomOf="@+id/creator_tag"
-                    tools:text="@tools:sample/lorem" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_wide"
-            android:clickable="true"
-            android:contentDescription="@string/fab_content_description"
-            android:focusable="true"
-            app:backgroundTint="@color/important_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:maxImageSize="24dp"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/navdrawer_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

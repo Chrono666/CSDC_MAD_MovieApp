@@ -2,35 +2,32 @@ package com.example.movieapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.movieapp.databinding.ActivityMainBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerLayout: DrawerLayout
 
-    private val movie: Movie = Movie(
-        rating = 4.5F,
-        genres = listOf("Drama", "Sport"),
-        creators = listOf("Scott Frank", "Alan Scott"),
-        actors = listOf("Anya Taylor-Joy", "Chloe Pirrie")
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.movie = movie
-        showToast()
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        drawerLayout = binding.drawerLayout
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+
+
     }
 
-    private fun showToast() {
-        binding.floatingActionButton.setOnClickListener {
-            Toast.makeText(
-                applicationContext,
-                "Hey this is the toast you activated through the fab button",
-                Toast.LENGTH_LONG
-            ).show()
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 }
