@@ -43,7 +43,6 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         genres = listOf("Action", "Adventure", "Drama"),
         creators = listOf("Anthony Russo", "Joe Russo"),
         actors = listOf(" Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"),
-        //TODO:
         picture = R.drawable.avengers
     )
     private val movie3: Movie = Movie(
